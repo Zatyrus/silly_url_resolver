@@ -1,3 +1,114 @@
+# URL Caller: additional environments and caches
+.venv*/
+virtualenv/
+*.dist-info/
+.uv-cache/
+
+# Private local work and validation output
+.local/
+not_for_github/
+.validation/
+
+# Benchmark results and profiling
+benchmark-results*/
+signal-results*/
+results/
+scheduler-profile.txt
+*.pstats
+*.prof
+*.log.*
+
+# Benchmark filenames at any depth, including custom --output directories
+# These names are reserved for generated output, not source assets.
+raw.csv
+summary.json
+run_status.json
+run_status.tmp
+performance.png
+performance.svg
+
+# Browser profiles, authentication state and browser-test output
+.url-caller-profile*/
+browser-profile*/
+chromium-profile*/
+chrome-profile*/
+dedicated-profile*/
+.playwright/
+playwright-report/
+test-results/
+blob-report/
+storage-state*.json
+auth-state*.json
+
+# Generated notebook runs and executed copies
+.notebook-runs/
+*.checked.ipynb
+*.executed.ipynb
+
+# Generated documentation, including nested builds
+site/
+
+# Built packages and downloaded release archives
+*.whl
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.7z
+
+# Temporary directories, files, editor backups and patch leftovers
+tmp/
+temp/
+.tmp/
+.temp/
+tmp????????
+*.tmp
+*.temp
+*.bak
+*.orig
+*.rej
+*~
+*.swp
+*.swo
+*.swn
+.#*
+\#*#
+
+# Additional local configuration, credentials, keys and certificates
+.env.*
+.direnv/
+.ssh/
+.aws/
+*.pem
+*.key
+*.pub
+*.crt
+*.cer
+*.der
+*.p8
+*.p12
+*.pfx
+*.jks
+*.keystore
+*.kdbx
+id_rsa*
+id_ed25519*
+id_ecdsa*
+id_dsa*
+credentials*.json
+auth.json
+secrets.*
+.netrc
+.git-credentials
+
+# Local editor and operating-system files
+.vscode/
+.idea/
+.DS_Store
+._*
+Thumbs.db
+Desktop.ini
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -85,7 +196,7 @@ ipython_config.py
 # pyenv
 #   For a library or package, you might want to ignore these files since the code is
 #   intended to run in multiple environments; otherwise, check them in:
-# .python-version
+.python-version
 
 # pipenv
 #   According to pypa/pipenv#598, it is recommended to include Pipfile.lock in version control.
@@ -98,7 +209,7 @@ ipython_config.py
 #   Similar to Pipfile.lock, it is generally recommended to include uv.lock in version control.
 #   This is especially recommended for binary packages to ensure reproducibility, and is more
 #   commonly ignored for libraries.
-#uv.lock
+uv.lock
 
 # poetry
 #   Similar to Pipfile.lock, it is generally recommended to include poetry.lock in version control.
