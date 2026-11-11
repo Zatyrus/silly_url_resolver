@@ -1,0 +1,50 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "timed-url-caller"
+version = "0.5.0"
+description = "Navigate or refresh a browser tab at a scheduled time, then leave it open."
+readme = "README.md"
+requires-python = ">=3.11"
+license = "Apache-2.0"
+dependencies = ["rich>=13,<16", "progress>=1.6,<2"]
+
+[project.optional-dependencies]
+browser = ["playwright>=1.49,<2"]
+benchmark = ["playwright>=1.49,<2", "matplotlib>=3.7,<4"]
+notebook = ["jupyterlab>=4,<5", "nbclient>=0.10,<1", "matplotlib>=3.7,<4", "playwright>=1.49,<2"]
+dev = ["ruff>=0.9,<1", "nbformat>=5,<6"]
+
+[dependency-groups]
+demo-only = []
+browser = ["playwright>=1.49,<2"]
+benchmark = [{include-group = "browser"}, "matplotlib>=3.7,<4"]
+notebook-only = [{include-group = "benchmark"}, "jupyterlab>=4,<5", "nbclient>=0.10,<1"]
+docs = ["mkdocs-material>=9.6,<10"]
+dev = ["ruff>=0.9,<1", "nbformat>=5,<6"]
+full = [{include-group = "demo-only"}, {include-group = "notebook-only"}, {include-group = "docs"}, {include-group = "dev"}]
+
+[project.scripts]
+timed-url-caller = "timed_url_caller.cli:main"
+timed-url-browser = "timed_url_caller.browser.launcher:main"
+timed-url-demo = "url_caller_demo.cli:main"
+timed-url-benchmark = "url_caller_bench.cli:main"
+
+[tool.uv]
+default-groups = []
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+timed_url_caller = ["browser/assets/*"]
+url_caller_demo = ["assets/*"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I"]

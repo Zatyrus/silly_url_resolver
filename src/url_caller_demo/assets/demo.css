@@ -1,0 +1,76 @@
+/* Local-only styles; no remote fonts or image requests. */
+:root {
+  color-scheme: dark;
+  font-family: system-ui, sans-serif;
+  color: #e8eef7;
+  background: #0a1423;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+main {
+  width: min(760px, 100%);
+  padding: clamp(24px, 5vw, 56px);
+  border: 1px solid #2b4258;
+  border-radius: 20px;
+  background: #101f31;
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1.1;
+}
+
+p {
+  line-height: 1.6;
+}
+
+.eyebrow {
+  color: #80dfce;
+  font-size: .75rem;
+  letter-spacing: .14em;
+}
+
+.clock {
+  font: 600 3rem ui-monospace, monospace;
+  color: #a6f2e0;
+}
+
+button {
+  padding: 16px 22px;
+  background: #95ebd6;
+  color: #092925;
+  border: 0;
+  border-radius: 10px;
+  font: inherit;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #b6f6e6;
+}
+
+button:focus-visible {
+  outline: 3px solid white;
+  outline-offset: 4px;
+}
+
+#wisdom {
+  padding: 18px;
+  background: #193244;
+  border-left: 3px solid #95ebd6;
+}
+
+[hidden] {
+  display: none !important;
+}

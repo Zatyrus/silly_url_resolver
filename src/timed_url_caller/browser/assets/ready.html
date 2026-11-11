@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="referrer" content="no-referrer">
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="/ready.css">
+    <title>URL Caller · Ready to navigate</title>
+  </head>
+  <body data-token="__TOKEN__" data-time="__TIME__">
+    <main>
+      <p class="eyebrow">NAVIGATE AT THE SCHEDULED TIME</p>
+      <h1>Your tab is getting ready.</h1>
+      <p id="state" role="status">Connecting to the scheduler…</p>
+      <p id="countdown" class="clock">—</p>
+      <p>Seconds until the request. The destination has not been visited.</p>
+      <p class="destination">__URL__</p>
+      <p>Keep this tab visible and the computer awake. The destination will still need time to load.</p>
+      <noscript>JavaScript is required for timed navigation.</noscript>
+    </main>
+    <script src="/ready.js"></script>
+  </body>
+</html>

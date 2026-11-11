@@ -1,0 +1,40 @@
+site_name: URL Caller
+site_description: Schedule browser navigation or refresh, then continue by hand.
+docs_dir: docs
+site_dir: site
+use_directory_urls: false
+theme:
+  name: material
+  font: false
+  palette:
+    primary: teal
+    accent: amber
+  features:
+    - navigation.sections
+    - navigation.top
+    - search.highlight
+    - search.suggest
+    - content.code.copy
+plugins:
+  - search
+extra_css:
+  - stylesheets/extra.css
+markdown_extensions:
+  - admonition
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - tables
+nav:
+  - Start here: index.md
+  - Usage:
+      - Modes and scheduling: usage.md
+      - Chromium setup: browser-setup.md
+      - Scripts and CLI: cli.md
+      - Python API: api.md
+  - Testing:
+      - Tests and benchmarks: testing.md
+      - Notebook: notebook.md
+  - Reference:
+      - Architecture: architecture.md
+      - Troubleshooting: troubleshooting.md
+      - Terms and limits: glossary.md
